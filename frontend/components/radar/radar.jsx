@@ -13,7 +13,7 @@ class Radar extends React.Component {
                 <h2 className="radar-header-text">Radar</h2>
                 <div className="radar-info-container">
                     <div className="radar-left">
-                        <img className="mini-image" src={this.props.user.imageUrl} alt={this.props.user.username}/>
+                        <img className="mini-image" src={image} alt={this.props.user.username}/>
                         <div className="mini-info">
                             <h4 className="mini-username">{this.props.user.username}</h4>
                             <h4 className="mini-tagline">Code is life...</h4>
