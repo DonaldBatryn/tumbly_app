@@ -1,0 +1,184 @@
+.hidden{
+    display: none;
+}
+
+.create-text-form-container{
+    background-color: white;
+    width: 569px;
+    height: 260px;
+    z-index: 4;
+    /* position: absolute; */
+    left: 240px;
+    top: 180px;
+    margin: 0 auto;
+    border-radius: 3px;
+}
+
+.text-form-username{
+    padding: 6px 0 0 14px;
+    width: 100%;
+    height: 10%;
+    font-size: 17px;
+    /* background-color: pink; */
+}
+
+.text-form{
+    width: 100%;
+    height: 90%;
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.dummy-img{
+    width: 80px;
+    height: 80px;
+}
+
+.image-div{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.text-input-fields{
+    height: 70%;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 14px;
+}
+
+.text-form-title{
+    height: 40px;
+    background-color: none;
+    border: none;
+    font-size: 40px;
+    margin: 10px 0 10px 0;
+    padding: 25 0 25px 0;
+}
+
+.text-form-body{
+    height: 100px;
+    width: 75%;
+    background-color: none;
+    border: none;
+    font-size: 20px;
+    padding: 6px 0 6px 0;
+    resize: none;
+}
+
+.text-form-body:focus{
+    outline: none;
+}
+
+.text-form-caption{
+    height: 40px;
+    width: 81%;
+    background-color: none;
+    border: none;
+    font-size: 20px;
+    margin: 10px 0 25px 0;
+    padding: 25 0 25px 0;
+}
+
+.text-form-file{
+    height: 40px;
+    background-color: none;
+    border: none;
+    font-size: 15px;
+    margin: 10px 0 10px 0;
+    padding: 25 0 25px 0;
+}
+
+.image-preview{
+    height: 80px;
+    width: auto;
+}
+
+.avatar-form-file::-webkit-file-upload-button{
+    display: none;
+}
+
+.avatar-form-file-2::-webkit-file-upload-button{
+    display: none;
+}
+
+.avatar-form-file-2:hover, .avatar-form-file:hover{
+    background-color: rgba(8, 193, 255, 0.411);
+}
+
+
+.drag-drop-msg{
+    right: 120px;
+    font-size: 16px;
+    position: absolute;
+    font-weight: 200;
+}
+
+.drag-drop-msg-2{
+    right: 200px;
+    font-size: 16px;
+    position: absolute;
+    font-weight: 200;
+}
+
+.text-form-buttons{
+    height: 30%;
+    width: 100%;
+    /* padding-bottom: 10px; */
+    padding: 0 14px 0 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.text-form-close{
+    width: 63px;
+    height: 40px;
+    border-radius: 2px;
+    color: rgb(19, 19, 95);
+    background-color: rgb(166, 167, 175);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.text-form-submit{
+    width: 60px;
+    min-height: 40px;
+    border-radius: 4px;
+    /* padding: 10px; */
+    font-size: 16px;
+    background-color: rgb(1, 172, 240);
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+input.avatar-form-file{
+    cursor: pointer;
+    width: 280px;
+    height: 90px;
+    border-radius: 4px;
+    border: 1px solid gray;
+    background-color: lightgray;
+}
+
+input.avatar-form-file-2{
+    cursor: pointer;
+    width: 180px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid gray;
+    background-color: lightgray;
+}

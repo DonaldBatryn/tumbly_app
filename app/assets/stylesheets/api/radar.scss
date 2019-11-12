@@ -1,0 +1,115 @@
+
+.radar-container{
+    height: 460px;
+    width: 99%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.radar-header-text{
+    color: whitesmoke;
+    font-size: 18px;
+    width: 100%;
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(156, 217, 238, 0.2);
+    margin-bottom: 8px;
+}
+
+.radar-info-container{
+    height: 55px;
+    width: 99%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.radar-left{
+    width: 49%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.radar-right{
+    width: 49%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.radar-right button{
+    border: none;
+}
+
+.radar-right button i{
+    transition: all 0.2s ease-in-out;
+    font-size: 17px;
+    border: none;
+    color: rgb(17, 17, 65);
+    background-color: rgba(17, 17, 65, 0.7);
+    width: 25px;
+    height: 25px;
+    padding-top: 4px;
+}
+
+.radar-right button i:hover{
+    background-color: rgb(29, 191, 255);
+}
+
+.mini-image{
+    height: 95%;
+    width: auto;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-right: 12px
+}
+
+.mini-image:hover{
+    box-shadow: -2px 2px 4px rgb(58, 141, 236);
+}
+
+.mini-info{
+    height: 95%;
+    width: 70%;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+
+}
+
+.mini-username{
+    font-size: 14px;
+
+}
+
+.mini-tagline{
+    font-size: 13px;
+    font-weight: 200;
+    color: rgba(189, 209, 205, 0.6);
+}
+
+.radar-preview-image-cont{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.radar-prev-img{
+    width: 99%;
+    height: auto;
+    margin-top: 15px;
+}

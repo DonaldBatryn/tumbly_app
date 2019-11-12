@@ -1,0 +1,99 @@
+
+.splash-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+  
+}
+
+.splash-1 {
+    position: absolute;
+    z-index: 9;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(17, 17, 65);
+}
+.splash-2 {
+    position: absolute;
+    z-index: 8;
+    width: 100vw;
+    height: 100vh;
+    background-color: purple;
+}
+
+.splash-3 {
+    position: absolute;
+    z-index: 7;
+    width: 100vw;
+    height: 100vh;
+    background-color: pink;
+}
+
+.splash-4 {
+    position: absolute;
+    z-index: 6;
+    width: 100vw;
+    height: 100vh;
+    background-color: green;
+}
+
+.splash-5 {
+    position: absolute;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    background-color: orangered;
+}
+
+.scroll-down {
+    animation-name: down;
+    animation-duration: 0.7s;
+    animation-direction: reverse;
+    animation-fill-mode: reverse;
+}
+.scroll-one {
+    position: absolute;
+    animation-name: up;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+}
+.scroll-two {
+    position: absolute;
+    animation-name: up;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+}
+.scroll-three {
+    position: absolute;
+    animation-name: up;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+}
+
+.scroll-four {
+    position: absolute;
+    animation-name: up;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+}
+.scroll-five {
+    position: absolute;
+}
+
+
+@keyframes up {
+    0% {
+        bottom: 0px;
+    }
+    100% {
+        bottom: 1000px;
+    }
+}
+@keyframes down {
+    0% {
+        top: 0px;
+    }
+    100% {
+        top: -1000px;
+    }
+}

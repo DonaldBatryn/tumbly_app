@@ -1,0 +1,143 @@
+
+.dashboard-container{
+    
+    min-width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background-color: rgb(17, 17, 65);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dashboard-aisle{
+    width: 1100px;
+    margin: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.left-column{
+    // margin-top: 62px;
+    margin-top: 102px;
+    /* margin-right: 30px; */
+    width: 50%;
+    min-width: 670px;
+    height: auto;
+    min-height: 640px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.create-panel-form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
+    margin: 5px 0;
+}
+
+.create-panel-container{
+    margin: 5px 0;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.avatar-container{
+    width: 15%;
+    height: 99%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    // background-color: pink;
+}
+
+.create-options-bar{
+    width: 85%;
+    height: 90%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 6px;
+
+}
+
+.create-panel-option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 99%;
+    width: 12.5%;
+    border-right: 1px solid lightgray;
+    position: relative; 
+    top: 0;
+}
+
+.create-panel-option:nth-of-type(7){
+    border: none;
+}
+
+.create-panel-avatar{
+    height: 75%;
+    width: 90%;
+    border-radius: 7px;
+    overflow: hidden;
+    // background-color: red;
+}
+
+.create-panel-img{
+    height: 100%;
+    width: auto;
+    left: -10px;
+}
+
+.create-panel-avatar:hover{
+    box-shadow: -2px 2px 4px rgb(58, 141, 236);
+}
+
+.create-panel-pic{
+    height: 42%;
+    width: auto;  
+}
+
+.create-panel-option:hover .create-panel-pic{
+    top: -4px;
+    position: relative; 
+}
+
+
+.create-panel-text{
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(161, 156, 156);
+}
+
+.right-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    // margin-top: 62px;
+    margin-top: 102px;
+    width: 365px;
+    height: auto;
+    min-height: 640px;
+}
+
+

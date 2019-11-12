@@ -1,0 +1,39 @@
+
+.modal {
+    display: none;
+}
+
+.modal.is-open {
+    display: block;
+}
+
+.modal-screen {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.2);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  
+}
+
+.modal-form {
+    display: block;
+    position: fixed;
+    top: 18%;
+    left: 50%;
+    margin-left: -199px;
+    width: 500px;
+    height: 350px;
+    padding: 20px;
+    padding-top: 6px;
+    background: white;
+    z-index: 3;
+    border-radius: 3px;
+    border: 2px solid whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}

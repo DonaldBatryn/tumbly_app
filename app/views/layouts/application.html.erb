@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tumbly</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type='text/css'>
+    
+
+    <script>
+      window.textButton = "<%= image_url('textButton.png') %>"
+      window.photoButton = "<%= image_url('photoButton.png') %>"
+      window.quoteButton = "<%= image_url('quoteButton.png') %>"
+      window.linkButton = "<%= image_url('linkButton.png') %>"
+      window.chatButton = "<%= image_url('chatButton.png') %>"
+      window.audioButton = "<%= image_url('audioButton.png') %>"
+      window.videoButton = "<%= image_url('videoButton.png') %>"
+      window.fold = "<%= image_url('fold.png') %>"
+    </script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
