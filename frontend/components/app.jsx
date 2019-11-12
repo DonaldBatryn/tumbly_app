@@ -4,11 +4,8 @@ import { Switch, Route } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
 import SplashContainer from './splash/splash';
 import Dashboard from './dashboard/dashboard';
-
-
 import Modal from './modal/modal';
 
-// require('dotenv').config();
 
 const App = () => (
     <div>
