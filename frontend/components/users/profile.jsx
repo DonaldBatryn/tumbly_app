@@ -92,6 +92,7 @@ class Profile extends React.Component {
                                 id="ff-2"
                                 type="file" 
                                 size="1000"
+                                // direct_upload
                                 name="image" 
                                 onChange={this.handlePreview} />
                             </div>

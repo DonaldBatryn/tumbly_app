@@ -1,4 +1,4 @@
-require 'open-uri'
+# require 'open-uri'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -46,21 +46,21 @@ user11 = User.create(username: "YumPop3303", email: "yumpop3303@tumbly.com", pas
 # post22 = Post.create(title: "Call me Dave!", body: "985-8825", user_id: user11.id, post_type: "text")
 # post23 = Post.create(title: "The Five 5ides of Time", body: "An album by mtvghosts, released independently in 2016", user_id: user1.id, post_type: "photo")
 
-image1 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/5idesCover.jpg')
+# image1 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/5idesCover.jpg')
 # image2 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/a300abd0aa3f98c88def0a278ffd1fbca7b338b3.jpg')
-image3 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/altCover.jpg')
-image4 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/dystopioCover.jpg')
+# image3 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/altCover.jpg')
+# image4 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/dystopioCover.jpg')
 # image5 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/ioCover.jpg')
-image6 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/marthaStewart.png')
-image7 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/mercutioCover.jpg')
-image8 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/noirPop.png')
+# image6 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/marthaStewart.png')
+# image7 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/mercutioCover.jpg')
+# image8 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/noirPop.png')
 # image9 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/plCover1.jpg')
 # image10 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/promCover.png')
-image11 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/theRutles.png')
+# image11 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/theRutles.png')
 # image12 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/tmbgHits.png')
 # image13 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/tripopCover.jpg')
 # image14 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/vaudvillianDisco.png')
-image15 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/weirdJams.png')
+# image15 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/weirdJams.png')
 
 # post23.images.attach(io: image1, filename: 'sides.jpg')
 # post20.images.attach(io: image2, filename: 'dysto.jpg')
@@ -80,11 +80,11 @@ image15 = open('https://tumbly-production.s3.us-east-2.amazonaws.com/weirdJams.p
 
 
 
-user1.image.attach(io: image1, filename: 'file6.jpg')
-user2.image.attach(io: image7, filename: 'file5.jpg')
-user3.image.attach(io: image8, filename: 'file7.jpg')
-user4.image.attach(io: image11, filename: 'file9.jpg')
-user5.image.attach(io: image15, filename: 'file12.jpg')
-user8.image.attach(io: image3, filename: 'file13.jpg')
-user10.image.attach(io: image6, filename: 'file4.jpg')
-user11.image.attach(io: image4, filename: 'file14.jpg')
+# user1.image.attach(io: image1, filename: 'file6.jpg')
+# user2.image.attach(io: image7, filename: 'file5.jpg')
+# user3.image.attach(io: image8, filename: 'file7.jpg')
+# user4.image.attach(io: image11, filename: 'file9.jpg')
+# user5.image.attach(io: image15, filename: 'file12.jpg')
+# user8.image.attach(io: image3, filename: 'file13.jpg')
+# user10.image.attach(io: image6, filename: 'file4.jpg')
+# user11.image.attach(io: image4, filename: 'file14.jpg')

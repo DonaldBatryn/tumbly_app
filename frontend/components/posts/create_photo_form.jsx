@@ -121,6 +121,7 @@ class CreatePhotoForm extends React.Component {
                                 name="images"
                                 type="file"
                                 multiple
+                                // direct_upload
                                 onChange={this.handlePreview}
                                 // onChange={e => this.setState({ images: e.target.files })}
                                 placeholder="Choose a picture to share" />
@@ -136,5 +137,7 @@ class CreatePhotoForm extends React.Component {
         )
     }
 }
+
+// slight change
 
 export default withRouter(connect(msp, mdp)(CreatePhotoForm));
