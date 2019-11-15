@@ -2,12 +2,6 @@ import React from 'react';
 import Search from '../search/search';
 import { Link } from 'react-router-dom'
 
-// home icon <i class="fas fa-home"></i>
-// cmps icon <i class="far fa-compass"></i>
-// mail icon <i class="fas fa-envelope"></i>
-// chat icon <i class="far fa-comment-dots"></i>
-// bolt icon <i class="fas fa-bolt"></i>
-// user icon <i class="fas fa-user"></i>
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -27,11 +21,8 @@ class NavBar extends React.Component {
             return (
                 <div className="navbar-main-loggedIn">
                     <div className="navbar-left">
-                        <Link className="t-logo-link" to="/dashboard">t</Link>
-                        {/* <div className="search-bar-cont">
-                        <input className="nav-search-bar"
-                            placeholder="Search Tumbly" />
-                        </div> */}
+                        <Link className="t-logo-link" to="/dashboard"><strong>t</strong></Link>
+                       
                         <Search />
                     </div>
                     <div className="navbar-center">
@@ -51,7 +42,7 @@ class NavBar extends React.Component {
             return (
                 <div className="navbar-main">
                     <div className="navbar-left">
-                        <Link className="t-logo-link" to="/dashboard">t</Link>
+                        <Link className="t-logo-link" to="/dashboard"><strong>t</strong></Link>
                     </div>
                     <div className="navbar-right">
                         <Link className="nav-login-button" to={'/login'}>Log in</Link>
