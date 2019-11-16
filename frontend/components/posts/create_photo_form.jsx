@@ -87,7 +87,7 @@ class CreatePhotoForm extends React.Component {
         let { currentUser, closeModal } = this.props
         let imagePreview;
         if (this.state.imageUrl === "") {
-            imagePreview = ""
+            imagePreview = <div className="dummy-img"></div>
         } else {
             imagePreview = <img className="image-preview" src={this.state.imageUrl} alt="image-preview" />
         }
