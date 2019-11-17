@@ -12,6 +12,7 @@ class LoginForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     }
 
@@ -29,6 +30,19 @@ class LoginForm extends React.Component {
             password: this.state.password
         };
 
+        this.props.login(user).then(() => {
+
+            this.props.history.push("/dashboard")
+        })
+    }
+
+    handleDemo(e) {
+        e.preventDefault();
+
+        let user = {
+            email: 'guest@tumbly.com',
+            password: '123456'
+        }
         this.props.login(user).then(() => {
 
             this.props.history.push("/dashboard")
@@ -66,11 +80,14 @@ class LoginForm extends React.Component {
                             placeholder="Password"
                         />
                         <br />
-                        <input className="session-submit" type="submit" value="Submit" />
+                        <input className="session-submit" type="submit" value="Submit" onSubmit={this.handleSubmit}/>
                         {/* <button className="session-submit" >Demo Login</button> */}
                         {this.renderErrors()}
+                        <button className="session-submit demo-btn" onClick={this.handleDemo}>Try Tumbly as a Guest</button>
                     </div>
                 </form>
+                <div>
+                </div>
             </div>
         );
     }

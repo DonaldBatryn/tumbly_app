@@ -9,14 +9,17 @@ class PostIndex extends React.Component {
             page: 0,
             loaded: false,
             posts: [],
-            totalLength: this.props.posts.length
+            totalLength: this.props.posts.length,
+            dots: false
         }
         this.getPosts = this.getPosts.bind(this)
     }
 
     getPosts() {
+        this.setState({ dots: true })
+        setTimeout(1000)
         this.props.fetchPosts(this.state.page);
-        this.setState({ page: this.state.page += 1 })
+        this.setState({ page: this.state.page += 1, dots: false })
     }
 
     componentDidMount() {
@@ -36,9 +39,21 @@ class PostIndex extends React.Component {
     // }
 
     render() {
+        let dots = (
+            <ul className="loading-dots">
+                <li className="dot-1"></li>
+                <li className="dot-2"></li>
+                <li className="dot-3"></li>
+            </ul>
+        )
         if (!this.props.posts.length) {
-            return <div className="post-index-container">Loading...</div>
+            return <div className="post-index-container">{dots}</div>
         }
+
+        // let dots = <ul className="hidden-dots"></ul>
+        // if (this.state.dots) {
+            
+        // }
   
         let allPosts = [];
         for (let i = this.props.posts.length - 1; i >= 0; i--) {
@@ -47,11 +62,13 @@ class PostIndex extends React.Component {
             allPosts.push(<li key={post.id} className="post-index-li"><PostIndexItem post={post} fetchUser={this.props.fetchUser} currentUser={this.props.currentUser} /></li>) 
         }
         if (!this.state.loaded) window.scrollTo(0, 0);
+        console.log(this.state.dots)
         return (
             <div className="post-index-container">
                 <ul className="post-index-ul">
                     {allPosts}
                 </ul>
+                {/* {dots} */}
                 <Waypoint onEnter={this.getPosts} />
             </div>
         )

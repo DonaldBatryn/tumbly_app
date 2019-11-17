@@ -51,7 +51,7 @@ class SignupForm extends React.Component {
             <div className="login-form-container">
                 <form className="login-form" onSubmit={this.handleSubmit}>
                     <h1 className="session-tumbly-header">tumbly</h1>
-                    <h4 className="session-tumbly-subheader">discover your new thing</h4>
+                    <h4 className="session-tumbly-subheader-signup">discover your new thing</h4>
                     <div className="session-inputs-div">
                         <br />
                         <input className="session-input" type="text"

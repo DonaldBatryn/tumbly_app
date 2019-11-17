@@ -23,6 +23,7 @@ class Api::PostsController < ApplicationController
   end
 
   def index
+    sleep(0.5)
     @posts = Post.all.page(params[:page]).per(3).order('created_at DESC')
     
     render "/api/posts/index"
