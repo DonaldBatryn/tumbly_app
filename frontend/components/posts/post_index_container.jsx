@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchPosts } from '../../actions/post_actions';
+import { fetchPosts, deletePost } from '../../actions/post_actions';
 import { fetchUser } from '../../actions/user_actions';
 import PostIndex from './post_index';
 
@@ -20,6 +20,7 @@ const mdp = dispatch => {
     return ({
         fetchPosts: (page) => dispatch(fetchPosts(page)),
         fetchUser:(id) => dispatch(fetchUser(id)),
+        deletePost: (id) => dispatch(deletePost(id))
         // fetchUsers: () => dispatch(fetchUsers())
     })
 }

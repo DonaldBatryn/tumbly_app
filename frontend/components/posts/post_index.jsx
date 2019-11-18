@@ -34,10 +34,6 @@ class PostIndex extends React.Component {
         }
     }
 
-    // filterNewPosts(statePosts, newPropsPosts) {
-    //     newPropsPosts.map
-    // }
-
     render() {
         let dots = (
             <ul className="loading-dots">
@@ -50,19 +46,15 @@ class PostIndex extends React.Component {
             return <div className="post-index-container">{dots}</div>
         }
 
-        // let dots = <ul className="hidden-dots"></ul>
-        // if (this.state.dots) {
-            
-        // }
   
         let allPosts = [];
         for (let i = this.props.posts.length - 1; i >= 0; i--) {
    
             let post = this.props.posts[i]
-            allPosts.push(<li key={post.id} className="post-index-li"><PostIndexItem post={post} fetchUser={this.props.fetchUser} currentUser={this.props.currentUser} /></li>) 
+            allPosts.push(<li key={post.id} className="post-index-li"><PostIndexItem post={post} fetchUser={this.props.fetchUser} currentUser={this.props.currentUser} deletePost={this.props.deletePost}/></li>) 
         }
         if (!this.state.loaded) window.scrollTo(0, 0);
-        console.log(this.state.dots)
+
         return (
             <div className="post-index-container">
                 <ul className="post-index-ul">

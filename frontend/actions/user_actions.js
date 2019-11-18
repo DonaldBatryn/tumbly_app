@@ -17,7 +17,7 @@ const receiveUser = user => ({
 
 
 export const fetchUsers = () => dispatch => {
-    // debugger
+   
     return UserAPIUtil.fetchUsers().then(users => dispatch(receiveUsers(users)))
 }
 

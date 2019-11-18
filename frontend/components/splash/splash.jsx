@@ -66,7 +66,7 @@ class Splash extends React.Component {
     }
 
     render() {
-        // debugger
+    
         let sessionForm;
         if (this.props.history.location.pathname === "/register") {
             sessionForm = <SignupFormContainer />

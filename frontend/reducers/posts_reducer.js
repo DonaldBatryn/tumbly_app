@@ -6,12 +6,12 @@ import {
 
 
 const postsReducer = (state = {}, action) => {
-    // debugger
+
     Object.freeze(state)
     let newState
     switch (action.type) {
         case RECEIVE_POSTS:
-            // debugger
+        
             return Object.assign({}, state, action.posts)
         case RECEIVE_POST:
             

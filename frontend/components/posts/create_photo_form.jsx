@@ -8,12 +8,7 @@ const msp = state => {
     let userId = state.session.id
     let currentUser = state.entities.users[userId]
     return ({
-        currentUser,
-        // post: {
-        //     title: "",
-        //     body: "",
-        //     post_type: 'photo'
-        // }
+        currentUser
     })
 }
 
@@ -91,10 +86,6 @@ class CreatePhotoForm extends React.Component {
         } else {
             imagePreview = <img className="image-preview" src={this.state.imageUrl} alt="image-preview" />
         }
-        // let dropZone = document.getElementById("ff-1")
-        // dropZone.addEventListener("mouseover", () => {
-        //     dropZone.classList.add('highlight')
-        // })
         return (
             <div className="modal is-open">
                 <form className="modal-form" onSubmit={this.handleSubmit}>
@@ -121,9 +112,7 @@ class CreatePhotoForm extends React.Component {
                                 name="images"
                                 type="file"
                                 multiple
-                                // direct_upload
                                 onChange={this.handlePreview}
-                                // onChange={e => this.setState({ images: e.target.files })}
                                 placeholder="Choose a picture to share" />
                         </div>
                     </div>

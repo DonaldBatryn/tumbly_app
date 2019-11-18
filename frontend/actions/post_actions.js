@@ -58,10 +58,10 @@ export const updatePost = (post) => dispatch => (
         err => dispatch(receivePostErrors(err.responseJSON)))
 )
 
-export const deletePost = (id) => dispatch => (
-    PostAPIUtil.deletePost(id).then(post => dispatch(removePost(post.id)),
+export const deletePost = (id) => dispatch => {
+    return PostAPIUtil.deletePost(id).then(id => dispatch(removePost(id)),
         err => dispatch(receivePostErrors(err.responseJSON)))
-)
+}
 
 export const clearErrors = () => dispatch => (
     dispatch(clearPostErrors())

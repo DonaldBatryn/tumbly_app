@@ -30,9 +30,9 @@ class Api::PostsController < ApplicationController
   end
 
   def destroy
-    @post = current_user.posts.find(params[:id])
+    @post = Post.find(params[:id])
     @post.destroy
-    render json: ['Post deleted successfully']
+    render json: @post.id
   end
 
   def post_params
