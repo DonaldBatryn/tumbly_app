@@ -27,7 +27,12 @@ const mdp = dispatch => {
 class CreateTextForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.post;
+        this.state = {
+            title: "",
+            body: "",
+            post_type: 'text',
+            msg: ""
+        };
         this.handleSubmit = this.handleSubmit.bind(this);
 
     }
@@ -42,6 +47,10 @@ class CreateTextForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        if (this.state.title === "" && this.state.body === "") {
+            this.setState({ msg: 'Post can\'t be blank'})
+            return
+        }
         this.props.createPost(this.state).then(
             this.setState({
                 title: "",
@@ -69,6 +78,7 @@ class CreateTextForm extends React.Component {
                             onChange={this.update('body')}
                             placeholder="Your text here" />
                     </div>
+                    <div className="form-error">{this.state.msg}</div>
                     <div className="text-form-buttons">
                         <h4 className="text-form-close" onClick={closeModal}>Close</h4>
                         <input className="text-form-submit" type="submit" value="Post" />

@@ -28,7 +28,8 @@ class CreatePhotoForm extends React.Component {
             post_type: 'photo',
             images: [],
             imageUrl: "",
-            imageFile: ""
+            imageFile: "",
+            msg: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handlePreview = this.handlePreview.bind(this);
@@ -60,6 +61,10 @@ class CreatePhotoForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        if (this.state.title === "" && this.state.body === "" && !this.state.images.length) {
+            this.setState({ msg: 'Post can\'t be blank' })
+            return
+        }
         const { title, body, post_type, images, imageUrl } = this.state;
         const formData = new FormData();
 
@@ -116,6 +121,7 @@ class CreatePhotoForm extends React.Component {
                                 placeholder="Choose a picture to share" />
                         </div>
                     </div>
+                    <div className="form-error">{this.state.msg}</div>
                     <div className="text-form-buttons">
                         <h4 className="text-form-close" onClick={closeModal}>Close</h4>
                         <input className="text-form-submit" type="submit" value="Post" />
