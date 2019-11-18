@@ -18,8 +18,8 @@ class Dashboard extends React.Component {
                         <PostIndexContainer />
                     </div>
                     <div className="right-column">
-                        {/* <RecommendedContainer /> */}
                         <RadarContainer />
+                        <RecommendedContainer />
                         {/* <PreviewsContainer /> */}
                     </div>
                 </div>

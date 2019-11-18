@@ -1,0 +1,59 @@
+
+.quote-form-title{
+    height: 60px;
+    width: auto;
+    min-width: 20px;
+    font-size: 40px;
+    // padding-left: 15px;
+}
+
+.quote-form-body{
+    height: 80px;
+    width: 95%;
+    background-color: none;
+    border: none;
+    font-size: 20px;
+    padding: 6px 0 6px 0;
+    resize: none;
+    margin-top: 10px;
+}
+
+.quote-form-title:focus{
+    outline: none;
+}
+
+.quote-form-body:focus{
+    outline: none;
+    
+}
+
+.quote-form-body:before{
+    content: "- ";
+    font-size: 40px;
+}
+
+.quote-form-input{
+    margin: 10px 0 10px 0;
+    padding: 25 0 25px 0;
+    width: auto;
+    background-color: none;
+    border: none;
+}
+
+div.quote-form-title:before{
+    height: 40px;
+    width: 20px;
+    content: "\201C";
+    z-index: 5;
+    color: black;
+    font-size: 50px;
+}
+
+div.quote-form-title:after{
+    height: 40px;
+    width: 20px;
+    content: "\201D";
+    z-index: 5;
+    color: black;
+    font-size: 50px;
+}

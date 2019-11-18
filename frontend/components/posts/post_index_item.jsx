@@ -38,40 +38,78 @@ class PostIndexItem extends React.Component {
         if (this.props.currentUser === this.props.post.user_id) {
             deleteButton = <button onClick={() => this.props.deletePost(this.props.post.id)} className="delete">&times;</button>
         }
-        return (
-            <div className="post-index-item">
+        if (this.props.post.post_type === 'quote') {
+            return (
+                <div className="post-index-item">
 
-                <span className="page-fold"><div className="border-square"></div></span>
-                <div className="shown-post">
-                    <div className="user-post-avatar">
-                        <img className="avatar-img" src={userImage} />
-                    </div>
-                    <div className="post-data">
-                        <div className="user-post-info">
-                            <h4>A post by:&nbsp;&nbsp;{this.state.user.username}</h4>
-                            {followBtn}
-                            
+                    <span className="page-fold"><div className="border-square"></div></span>
+                    <div className="shown-post">
+                        <div className="user-post-avatar">
+                            <img className="avatar-img" src={userImage} />
                         </div>
-                        <ul className="image-ul">{images}</ul>
-                        <div className="post-text">
-                            <h3 className="post-title">{this.props.post.title}</h3>
-                            <h3 className="post-body">{this.props.post.body}</h3>
-                        </div>
-                        <div className="user-action-buttons">
-                            <div className="user-action-left">
-                                {deleteButton}
+                        <div className="post-data">
+                            <div className="user-post-info">
+                                <h4>A post by:&nbsp;&nbsp;{this.state.user.username}</h4>
+                                {followBtn}
+
                             </div>
-                            <div className="user-action-right">
-                                <button className="no-border-btn"><i className="fa fa-paper-plane"></i></button>
-                                <button className="no-border-btn"><i className="fa fa-comment"></i></button>
-                                <button className="no-border-btn"><i className="fa fa-retweet"></i></button>
-                                <button className="no-border-btn"><i className="fa fa-heart"></i></button>
+                            
+                            <div className="post-text">
+                                <h3 className="post-title">{this.props.post.title}</h3>
+                                <h3 className="post-body">-&nbsp;{this.props.post.body}</h3>
+                            </div>
+                            <div className="user-action-buttons">
+                                <div className="user-action-left">
+                                    {deleteButton}
+                                </div>
+                                <div className="user-action-right">
+                                    <button className="no-border-btn"><i className="fa fa-paper-plane"></i></button>
+                                    <button className="no-border-btn"><i className="fa fa-comment"></i></button>
+                                    <button className="no-border-btn"><i className="fa fa-retweet"></i></button>
+                                    <button className="no-border-btn"><i className="fa fa-heart"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        )
+            )
+        } else {
+            return (
+                <div className="post-index-item">
+    
+                    <span className="page-fold"><div className="border-square"></div></span>
+                    <div className="shown-post">
+                        <div className="user-post-avatar">
+                            <img className="avatar-img" src={userImage} />
+                        </div>
+                        <div className="post-data">
+                            <div className="user-post-info">
+                                <h4>A post by:&nbsp;&nbsp;{this.state.user.username}</h4>
+                                {followBtn}
+                                
+                            </div>
+                            <ul className="image-ul">{images}</ul>
+                            <div className="post-text">
+                                <h3 className="post-title">{this.props.post.title}</h3>
+                                <h3 className="post-body">{this.props.post.body}</h3>
+                            </div>
+                            <div className="user-action-buttons">
+                                <div className="user-action-left">
+                                    {deleteButton}
+                                </div>
+                                <div className="user-action-right">
+                                    <button className="no-border-btn"><i className="fa fa-paper-plane"></i></button>
+                                    <button className="no-border-btn"><i className="fa fa-comment"></i></button>
+                                    <button className="no-border-btn"><i className="fa fa-retweet"></i></button>
+                                    <button className="no-border-btn"><i className="fa fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+
+        }
     }
 }
 

@@ -42,9 +42,9 @@ class PostIndex extends React.Component {
                 <li className="dot-3"></li>
             </ul>
         )
-        if (!this.props.posts.length) {
-            return <div className="post-index-container">{dots}</div>
-        }
+        // if (!this.props.posts.length) {
+        //     return <div className="post-index-container">{dots}</div>
+        // }
 
   
         let allPosts = [];

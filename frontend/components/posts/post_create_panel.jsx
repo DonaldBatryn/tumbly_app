@@ -41,7 +41,7 @@ class PostCreatePanel extends React.Component {
                             <img className="create-panel-pic" src={window.photoButton} alt="imageupload" />
                             <h3 className="create-panel-text">Photo</h3>
                         </div>
-                        <div className="create-panel-option">
+                        <div className="create-panel-option" onClick={() => openModal('Quote')}>
                             <img className="create-panel-pic" src={window.quoteButton} alt="Quote" />
                             <h3 className="create-panel-text">Quote</h3>
                         </div>

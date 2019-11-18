@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreateTextForm from '../posts/create_text_form';
 import CreatePhotoForm from '../posts/create_photo_form';
+import CreateQuoteForm from '../posts/create_quote_form';
 import ProfileContainer from '../users/profile';
 
 
@@ -20,6 +21,9 @@ function Modal({ modal, closeModal }) {
             break;
         case 'Profile':
             component = <ProfileContainer />;
+            break;
+        case 'Quote':
+            component = <CreateQuoteForm />;
             break;
         default:
             return null;
