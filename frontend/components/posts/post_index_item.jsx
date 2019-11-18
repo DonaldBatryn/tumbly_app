@@ -55,7 +55,7 @@ class PostIndexItem extends React.Component {
                             </div>
                             
                             <div className="post-text">
-                                <h3 className="post-title">{this.props.post.title}</h3>
+                                <h3 className="post-title">&ldquo;{this.props.post.title}&rdquo;</h3>
                                 <h3 className="post-body">-&nbsp;{this.props.post.body}</h3>
                             </div>
                             <div className="user-action-buttons">

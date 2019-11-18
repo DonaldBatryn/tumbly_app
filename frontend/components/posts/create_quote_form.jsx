@@ -55,8 +55,8 @@ class CreateQuoteForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let quoteDiv = document.getElementsByClassName('quote-form-title')[0]
-        let sourceDiv = document.getElementsByClassName('quote-form-body')[0]
+        let quoteDiv = document.getElementsByClassName('inner-quote-form')[0]
+        let sourceDiv = document.getElementsByClassName('inner-quote-source')[0]
         if (sourceDiv.innerHTML === "" && quoteDiv.innerHTML === "") {
             this.setState({ msg: 'Post can\'t be blank'})
             return
@@ -76,10 +76,10 @@ class CreateQuoteForm extends React.Component {
     }
 
     componentDidMount() {
-        let quoteDiv = document.getElementsByClassName('quote-form-title')[0]
-        if (quoteDiv.innerHTML === "") {
-            quoteDiv.innerHTML = 'Quote'
-        } 
+        // let quoteDiv = document.getElementsByClassName('inner-quote-form')[0]
+        // if (quoteDiv.innerHTML === "") {
+        //     quoteDiv.innerHTML = 'Quote'
+        // } 
 
     }
 
@@ -104,17 +104,16 @@ class CreateQuoteForm extends React.Component {
                             value={this.state.title}
                             onChange={this.updateQuote}
                             placeholder="Quote" /></div> */}
-                        <div 
-                            contentEditable="true" 
-                            className="quote-form-title"
-                            onChange={(e) => this.handleChange(e.target.innerHTML)}></div>
+
+                        <div className="quote-form-title"><div className="inner-quote-form" contentEditable="true" ></div></div>
 
                         {/* <textarea className="quote-form-body"
                             type="text"
                             value={this.state.body}
                             onChange={this.update('body')}
                             placeholder="- Source" /> */}
-                        <div className="quote-form-body" contentEditable="true"></div>
+
+                        <div className="quote-form-body" ><div className="inner-quote-source" contentEditable="true"></div></div>
                     </div>
                     <div className="form-error">{this.state.msg}</div>
                     <div className="text-form-buttons">
