@@ -35,13 +35,12 @@ class CreateQuoteForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateQuote = this.updateQuote.bind(this);
-        let quoteDiv = document.getElementsByClassName('quote-form-title')[0]
-        this.handleChange = this.handleChange.bind(quoteDiv)
+        // let quoteDiv = document.getElementsByClassName('quote-form-title')[0]
+        // this.handleChange = this.handleChange.bind(quoteDiv)
+        this.handleTrim = this.handleTrim.bind(this);
     }
 
     updateQuote(e){
-       
-        // this.setState({ title: e.target.value.slice(1, e.target.value.length - 1) })
         this.setState({ title: e.target.value })
     }
 
@@ -53,6 +52,19 @@ class CreateQuoteForm extends React.Component {
         }
     }
 
+    handleTrim(str) {
+        let stopIdx;
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] !== '&') {
+                continue;
+            } else {
+                stopIdx = i
+                break;
+            }
+        }
+        return str.slice(0, stopIdx)
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         let quoteDiv = document.getElementsByClassName('inner-quote-form')[0]
@@ -61,9 +73,12 @@ class CreateQuoteForm extends React.Component {
             this.setState({ msg: 'Post can\'t be blank'})
             return
         }
+        let trimmedQuote = this.handleTrim(quoteDiv.innerHTML)
+        let trimmedSource = this.handleTrim(sourceDiv.innerHTML)
+        
         this.props.createPost({
-            title: quoteDiv.innerHTML,
-            body: sourceDiv.innerHTML,
+            title: trimmedQuote,
+            body: trimmedSource,
             post_type: 'quote',
             user_id: this.props.currentUser.id
         }).then(
@@ -83,12 +98,12 @@ class CreateQuoteForm extends React.Component {
 
     }
 
-    handleChange(e) {
-        let quoteDiv = document.getElementsByClassName('quote-form-title')[0]
-        if (quoteDiv.innerHTML !== "Quote") {
-            quoteDiv.innerHTML = ''
-        } 
-    }
+    // handleChange(e) {
+    //     let quoteDiv = document.getElementsByClassName('quote-form-title')[0]
+    //     if (quoteDiv.innerHTML !== "Quote") {
+    //         quoteDiv.innerHTML = ''
+    //     } 
+    // }
     
     render() {
         let { currentUser, closeModal } = this.props
