@@ -35,8 +35,6 @@ class CreateQuoteForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateQuote = this.updateQuote.bind(this);
-        // let quoteDiv = document.getElementsByClassName('quote-form-title')[0]
-        // this.handleChange = this.handleChange.bind(quoteDiv)
         this.handleTrim = this.handleTrim.bind(this);
     }
 
@@ -89,21 +87,6 @@ class CreateQuoteForm extends React.Component {
             })
         ).then(() => this.props.closeModal())
     }
-
-    componentDidMount() {
-        // let quoteDiv = document.getElementsByClassName('inner-quote-form')[0]
-        // if (quoteDiv.innerHTML === "") {
-        //     quoteDiv.innerHTML = 'Quote'
-        // } 
-
-    }
-
-    // handleChange(e) {
-    //     let quoteDiv = document.getElementsByClassName('quote-form-title')[0]
-    //     if (quoteDiv.innerHTML !== "Quote") {
-    //         quoteDiv.innerHTML = ''
-    //     } 
-    // }
     
     render() {
         let { currentUser, closeModal } = this.props
@@ -114,19 +97,8 @@ class CreateQuoteForm extends React.Component {
                 <form className="modal-form" onSubmit={this.handleSubmit}>
                     <h5 className="text-form-username">{currentUser.username}</h5>
                     <div className="text-input-fields">
-                        {/* <div className="quote-form-title"><input className="quote-form-input"
-                            type="text"
-                            value={this.state.title}
-                            onChange={this.updateQuote}
-                            placeholder="Quote" /></div> */}
 
                         <div className="quote-form-title"><div className="inner-quote-form" contentEditable="true" ></div></div>
-
-                        {/* <textarea className="quote-form-body"
-                            type="text"
-                            value={this.state.body}
-                            onChange={this.update('body')}
-                            placeholder="- Source" /> */}
 
                         <div className="quote-form-body" ><div className="inner-quote-source" contentEditable="true"></div></div>
                     </div>

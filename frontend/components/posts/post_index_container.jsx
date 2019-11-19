@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchPosts, deletePost } from '../../actions/post_actions';
+import { fetchPosts, deletePost, fetchPost } from '../../actions/post_actions';
+import { createComment, deleteComment } from '../../actions/comment_actions';
 import { fetchUser } from '../../actions/user_actions';
 import PostIndex from './post_index';
 
@@ -9,19 +10,20 @@ const msp = state => {
         posts: Object.keys(state.entities.posts).map(id => {
             return state.entities.posts[id]
         }),
-        currentUser: state.session.id,
-        // users: Object.keys(state.entities.users).map(id => {
-        //     return state.entities.users[id]
-        // })
+        currentUser: state.session.id
+    
     })
 }
 
 const mdp = dispatch => {
     return ({
         fetchPosts: (page) => dispatch(fetchPosts(page)),
+        fetchPost: id => dispatch(fetchPost(id)),
         fetchUser:(id) => dispatch(fetchUser(id)),
-        deletePost: (id) => dispatch(deletePost(id))
-        // fetchUsers: () => dispatch(fetchUsers())
+        deletePost: (id) => dispatch(deletePost(id)),
+        createComment: (postId, comment) => dispatch(createComment(postId, comment)),
+        deleteComment: id => dispatch(deleteComment(id))
+        
     })
 }
 

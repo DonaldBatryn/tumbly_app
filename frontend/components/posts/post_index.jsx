@@ -42,16 +42,24 @@ class PostIndex extends React.Component {
                 <li className="dot-3"></li>
             </ul>
         )
-        // if (!this.props.posts.length) {
-        //     return <div className="post-index-container">{dots}</div>
-        // }
-
+      
   
         let allPosts = [];
         for (let i = this.props.posts.length - 1; i >= 0; i--) {
    
             let post = this.props.posts[i]
-            allPosts.push(<li key={post.id} className="post-index-li"><PostIndexItem post={post} fetchUser={this.props.fetchUser} currentUser={this.props.currentUser} deletePost={this.props.deletePost}/></li>) 
+            allPosts.push(
+            <li key={post.id} className="post-index-li">
+                <PostIndexItem 
+                    post={post} 
+                    fetchUser={this.props.fetchUser} 
+                    fetchPost={this.props.fetchPost}
+                    currentUser={this.props.currentUser} 
+                    deletePost={this.props.deletePost}
+                    createComment={this.props.createComment}
+                    deleteComment={this.props.deleteComment}
+                />
+            </li>) 
         }
         if (!this.state.loaded) window.scrollTo(0, 0);
 

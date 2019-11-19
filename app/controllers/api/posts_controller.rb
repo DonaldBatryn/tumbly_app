@@ -1,4 +1,6 @@
 class Api::PostsController < ApplicationController
+  before_action :require_login
+
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id    

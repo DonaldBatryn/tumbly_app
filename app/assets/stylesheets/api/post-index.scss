@@ -82,6 +82,7 @@
     justify-content: flex-start;
     align-items: center;
     overflow: hidden;
+    
 }
 
 .post-follow-btn{
@@ -244,8 +245,8 @@
     height: 100%;
     position: relative;
     border-radius: 5px;
-    border-top: 9px solid rgb(17, 17, 65);;
-    border-right: 9px solid rgb(17, 17, 65);;
+    border-top: 9px solid rgb(17, 17, 65);
+    border-right: 9px solid rgb(17, 17, 65);
     border-bottom: 9px solid rgba(70, 70, 102, 0.2);
     border-left: 9px solid rgba(70, 70, 102, 0.2);
 }

@@ -100,13 +100,13 @@ class CreatePhotoForm extends React.Component {
                             type="text"
                             value={this.state.title}
                             onChange={this.update('title')}
-                            placeholder="Title" />
+                            placeholder="Title (optional)" />
 
                         <textarea className="text-form-body"
                             type="text"
                             value={this.state.body}
                             onChange={this.update('body')}
-                            placeholder="Your text here" />
+                            placeholder="Add a caption (optional)" />
 
                         
                         <div className="image-div">
