@@ -91,6 +91,7 @@ class PostIndexItem extends React.Component {
             if (parseInt(com.user_id) === that.props.currentUser){
             
                 deleteComButton = <button className="com-delete-btn" onClick={() => {
+                    debugger
                     this.props.deleteComment(com.id).then((res) => this.props.fetchPost(this.props.post.id))
                     
                 }}>&times;</button>
@@ -133,7 +134,7 @@ class PostIndexItem extends React.Component {
                                 </div>
                                 <div className="user-action-right">
                                     <button className="no-border-btn"><i className="fa fa-paper-plane"></i></button>
-                                    <button onClick={this.revealComments} className="no-border-btn"><i className="fa fa-comment"></i></button>
+                                    <button onClick={() => this.revealComments()} className="no-border-btn"><i className="fa fa-comment"></i></button>
                                     <button className="no-border-btn"><i className="fa fa-retweet"></i></button>
                                     <button className="no-border-btn"><i className="fa fa-heart"></i></button>
                                 </div>
@@ -176,7 +177,7 @@ class PostIndexItem extends React.Component {
                                 </div>
                                 <div className="user-action-right">
                                     <button className="no-border-btn"><i className="fa fa-paper-plane"></i></button>
-                                    <button onClick={this.revealComments} className="no-border-btn"><i className="fa fa-comment"></i></button>
+                                    <button onClick={() => this.revealComments()} className="no-border-btn"><i className="fa fa-comment"></i></button>
                                     <button className="no-border-btn"><i className="fa fa-retweet"></i></button>
                                     <button className="no-border-btn"><i className="fa fa-heart"></i></button>
                                 </div>
