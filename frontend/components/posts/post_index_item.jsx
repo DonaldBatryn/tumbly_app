@@ -91,7 +91,6 @@ class PostIndexItem extends React.Component {
             if (parseInt(com.user_id) === that.props.currentUser){
             
                 deleteComButton = <button className="com-delete-btn" onClick={() => {
-                    debugger
                     this.props.deleteComment(com.id).then((res) => this.props.fetchPost(this.props.post.id))
                     
                 }}>&times;</button>
