@@ -157,10 +157,10 @@ class Splash extends React.Component {
                 <div className={`splash-2 ${this.state.splashClass2}`} onWheel={this.handleWheel2}>
                     {/* <div className="session-tumbly-header">Floater</div> */}
                     <Slide2Box1 className="splash2-box-1" pose={this.state.slide2isVisible ? 'visible' : 'hidden'} >
-                        <h1 className="splash2-tumbly-header">Tumbly is so much like Tumblr, I get confused sometimes!</h1>
+                        <h1 className="splash2-tumbly-header">tumbly is so much like Tumblr, I get confused sometimes!</h1>
                     </Slide2Box1>
                     <Slide2Box2 className="splash2-box-2" pose={this.state.slide2isVisible ? 'visible' : 'hidden'}>
-                        <p className="splash2-tumbly-subheader">I wanted to practice my full-stack chops, and really admire the Tumblr platform for its utility and it's incredible CSS. This project is probably my favorite app I've made!</p>
+                        <p className="splash2-tumbly-subheader">I wanted to practice my full-stack chops, and really admire the Tumblr platform for its utility and its incredible CSS. This project is probably my favorite app I've made!</p>
                     </Slide2Box2 >
                     <Slide1Box1 className="splash1-box1" pose={this.state.slide1isVisible ? 'visible' : 'hidden'}>
                         <div className="down-arrows">
@@ -193,10 +193,10 @@ class Splash extends React.Component {
                 </div>
                 <div className={`splash-4 ${this.state.splashClass4}`} onWheel={this.handleWheel4}>
                     <Slide4Box1 className="splash4-box1" pose={this.state.slide4isVisible ? 'visible' : 'hidden'}>
-                        <h1>Your Tumbly.</h1>
+                        <h1>your tumbly.</h1>
                     </Slide4Box1>
                     <Slide4Box2 className="splash4-box2" pose={this.state.slide4isVisible ? 'visible' : 'hidden'}>
-                        <h1>Your world.</h1>
+                        <h1>your world.</h1>
                     </Slide4Box2>
                     <Slide4Box3 className="splash4-box3" pose={this.state.slide4isVisible ? 'visible' : 'hidden'}>
                         <h4>Scroll down to get started</h4>
