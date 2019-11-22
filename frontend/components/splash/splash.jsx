@@ -80,7 +80,10 @@ class Splash extends React.Component {
     handleWheel2(e) {
         e.stopPropagation();
         if (e.deltaY < 0) {
-            this.setState({ splashClass1: 'scroll-down', slide2isVisible: false, slide1isVisible: true  });
+            this.setState({ splashClass1: 'scroll-down', slide2isVisible: false, slide1isVisible: false  });
+            setTimeout(() => {
+                this.setState({ slide1isVisible: true })
+            }, 700)
         } else {
             this.setState({ splashClass2: 'scroll-two', slide2isVisible: false, slide1isVisible: false });
             setTimeout(() => {
@@ -92,9 +95,9 @@ class Splash extends React.Component {
     handleWheel3(e) {
         e.stopPropagation();
         if (e.deltaY < 0) {
-            this.setState({ splashClass2: 'scroll-down', slide3isVisible: false  });
+            this.setState({ splashClass2: 'scroll-down', slide3isVisible: false, slide1isVisible: false  });
             setTimeout(() => {
-                this.setState({ slide2isVisible: true })
+                this.setState({ slide2isVisible: true, slide1isVisible: true })
             }, 700)
         } else {
             this.setState({ splashClass3: 'scroll-three', slide3isVisible: false, slide1isVisible: false });
@@ -107,7 +110,7 @@ class Splash extends React.Component {
     handleWheel4(e) {
         e.stopPropagation();
         if (e.deltaY < 0) {
-            this.setState({ splashClass3: 'scroll-down', slide4isVisible: false  });
+            this.setState({ splashClass3: 'scroll-down', slide4isVisible: false, slide1isVisible: true  });
             setTimeout(() => {
                 this.setState({ slide3isVisible: true })
             }, 700)
