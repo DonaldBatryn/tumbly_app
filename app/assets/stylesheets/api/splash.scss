@@ -12,8 +12,16 @@
     width: 100vw;
     height: 100vh;
     background-color: rgb(17, 17, 65);
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
+
+.splash1-box1{
+    margin-bottom: 20px;
+}
+
 .splash-2 {
     position: absolute;
     z-index: 8;
@@ -63,6 +71,15 @@
     width: 100vw;
     height: 100vh;
     background-color: rgb(245, 124, 215);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.splash-3-row{
+    width: 100%;
+    height: 550px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -123,7 +140,7 @@
     color: whitesmoke;
     font-weight: 900;
     text-align: center;
-    // margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .splash4-box2{
@@ -133,7 +150,34 @@
     color: whitesmoke;
     font-weight: 400;
     text-align: center;
-    margin-bottom: 260px;  
+    margin-bottom: 160px;  
+}
+
+.splash4-box3{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    // margin-bottom: 60px; 
+    color: whitesmoke;
+}
+
+.down-arrows{
+    width: 320px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    color: rgb(20, 164, 221);
+    margin-bottom: 40px;
+}
+
+.arrow{
+    width: 30px;
+    height: 30px;
+    font-size: 40px;
 }
 
 .splash-5 {
