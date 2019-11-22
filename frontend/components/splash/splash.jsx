@@ -4,9 +4,14 @@ import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 import posed from 'react-pose';
 
-const Box = posed.div({
-    visible: { left: 550, top: 250, transition: { duration: 300 } },
-    hidden: { left: -100, top: -100 }
+const Slide2Box1 = posed.div({
+    visible: { left: 10, bottom: 250, transition: { duration: 300 } },
+    hidden: { left: -1500, bottom: 250 }
+})
+
+const Slide2Box2 = posed.div({
+    visible: { right: 10, bottom: 230, transition: { duration: 300 } },
+    hidden: { right: -1500, bottom: 230 }
 })
 
 class Splash extends React.Component {
@@ -18,7 +23,7 @@ class Splash extends React.Component {
             splashClass3: "",
             splashClass4: "",
             splashClass5: "",
-            isVisible: false
+            slide2isVisible: false
         }
         this.handleWheel1 = this.handleWheel1.bind(this);
         this.handleWheel2 = this.handleWheel2.bind(this);
@@ -30,12 +35,12 @@ class Splash extends React.Component {
     handleWheel1(e) {
         e.stopPropagation();
         if (e.deltaY < 0) {
-            this.setState({ splashClass1: 'scroll-down', isVisible: false });
+            this.setState({ splashClass1: 'scroll-down', slide2isVisible: false });
         } else {
             this.setState({ splashClass1: 'scroll-one' });
             setTimeout(() => {
-                this.setState({ isVisible: true })
-            }, 2000)
+                this.setState({ slide2isVisible: true })
+            }, 700)
             
         }
         
@@ -44,29 +49,29 @@ class Splash extends React.Component {
     handleWheel2(e) {
         e.stopPropagation();
         if (e.deltaY < 0) {
-            this.setState({ splashClass1: 'scroll-down', isVisible: false  });
+            this.setState({ splashClass1: 'scroll-down', slide2isVisible: false  });
             console.log('trig')
         } else {
-            this.setState({ splashClass2: 'scroll-two' });
+            this.setState({ splashClass2: 'scroll-two', slide2isVisible: false });
         }
     }
 
     handleWheel3(e) {
         e.stopPropagation();
         if (e.deltaY < 0) {
-            this.setState({ splashClass2: 'scroll-down', isVisible: false  });
+            this.setState({ splashClass2: 'scroll-down'  });
             setTimeout(() => {
-                this.setState({ isVisible: true })
-            }, 2000)
+                this.setState({ slide2isVisible: true })
+            }, 700)
         } else {
-            this.setState({ splashClass3: 'scroll-three', isVisible: true });
+            this.setState({ splashClass3: 'scroll-three', slide2isVisible: true });
         }
     }
 
     handleWheel4(e) {
         e.stopPropagation();
         if (e.deltaY < 0) {
-            this.setState({ splashClass3: 'scroll-down', isVisible: false  });
+            this.setState({ splashClass3: 'scroll-down', slide2isVisible: false  });
         } else {
             this.setState({ splashClass4: 'scroll-four' });
         }
@@ -75,7 +80,7 @@ class Splash extends React.Component {
     handleWheel5(e) {
         e.stopPropagation();
         if (e.deltaY < 0) {
-            this.setState({ splashClass4: 'scroll-down', isVisible: false  });
+            this.setState({ splashClass4: 'scroll-down', slide2isVisible: false  });
         } else {
             this.setState({ splashClass5: 'scroll-five' });
         }
@@ -99,7 +104,12 @@ class Splash extends React.Component {
                 </div>
                 <div className={`splash-2 ${this.state.splashClass2}`} onWheel={this.handleWheel2}>
                     {/* <div className="session-tumbly-header">Floater</div> */}
-                    <Box className="box" pose={this.state.isVisible ? 'visible' : 'hidden'} />
+                    <Slide2Box1 className="splash2-box-1" pose={this.state.slide2isVisible ? 'visible' : 'hidden'} >
+                        <h1 className="splash2-tumbly-header">Tumbly is so much like Tumblr, I get confused sometimes!</h1>
+                    </Slide2Box1>
+                    <Slide2Box2 className="splash2-box-2" pose={this.state.slide2isVisible ? 'visible' : 'hidden'}>
+                        <p className="splash2-tumbly-subheader">I wanted to practice my full-stack chops, and really admire the Tumblr platform for its utility and it's incredible CSS. This project is probably my favorite app I've made!</p>
+                    </Slide2Box2 >
                 </div>
                 <div className={`splash-3 ${this.state.splashClass3}`} onWheel={this.handleWheel3}>
 

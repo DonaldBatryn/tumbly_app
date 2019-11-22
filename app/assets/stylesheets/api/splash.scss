@@ -6,11 +6,35 @@
   
 }
 
-.box{
-    width: 100px;
+.splash2-box-1{
+    width: 800px;
     height: 100px;
-    background-color: red;
     position: relative;
+
+}
+
+.splash2-box-2{
+    width: 800px;
+    height: 100px;
+    position: relative;
+}
+
+.splash2-tumbly-header{
+    width: 95%;
+    color: whitesmoke;
+    font-size: 40px;
+    text-align: center;
+}
+
+.splash2-tumbly-subheader{
+    width: 95%;
+    color: whitesmoke;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 200;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 .splash-1 {
@@ -19,6 +43,7 @@
     width: 100vw;
     height: 100vh;
     background-color: rgb(17, 17, 65);
+    
 }
 .splash-2 {
     position: absolute;
@@ -26,7 +51,13 @@
     width: 100vw;
     height: 100vh;
     background-color: purple;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }
+
+
 
 .splash-3 {
     position: absolute;
