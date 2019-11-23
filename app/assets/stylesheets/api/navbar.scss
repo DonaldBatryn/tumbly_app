@@ -85,8 +85,8 @@
 
 
 
-.t-logo-link{
-    width: 8%;
+a.t-logo-link{
+    width: 50px;
     height: 98%;
     color: whitesmoke;
     font-size: 40px;
@@ -94,7 +94,8 @@
     text-decoration: none;
     margin-left: 15px;
     font-weight: 2000; 
-    
+    padding-top: 3px;
+    cursor: pointer;
 }
 
 .search-bar-cont{

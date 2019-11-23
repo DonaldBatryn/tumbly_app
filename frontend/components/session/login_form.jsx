@@ -83,7 +83,7 @@ class LoginForm extends React.Component {
                         <input className="session-submit" type="submit" value="Submit" onSubmit={this.handleSubmit}/>
                         {/* <button className="session-submit" >Demo Login</button> */}
                         {this.renderErrors()}
-                        <button className="session-submit demo-btn" onClick={this.handleDemo}>Try Tumbly as a Guest</button>
+                        <button className="session-submit demo-btn" onClick={this.handleDemo}>Try tumbly as a Guest</button>
                     </div>
                 </form>
                 <div>

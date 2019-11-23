@@ -21,7 +21,8 @@ class NavBar extends React.Component {
             return (
                 <div className="navbar-main-loggedIn">
                     <div className="navbar-left">
-                        <Link className="t-logo-link" to="/dashboard"><strong>t</strong></Link>
+                        {/* <Link className="t-logo-link" to="/dashboard"><strong>t</strong></Link> */}
+                        <Link className="t-logo-link" to="/dashboard"><i className="fa fa-tumblr"></i></Link>
                        
                         <Search />
                     </div>
@@ -42,7 +43,7 @@ class NavBar extends React.Component {
             return (
                 <div className="navbar-main">
                     <div className="navbar-left">
-                        <Link className="t-logo-link" to="/dashboard"><strong>t</strong></Link>
+                        <Link className="t-logo-link" to="/dashboard"><i className="fa fa-tumblr"></i></Link>
                     </div>
                     <div className="navbar-right">
                         <Link className="nav-login-button" to={'/login'}>Log in</Link>
