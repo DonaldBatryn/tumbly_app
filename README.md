@@ -7,7 +7,7 @@
 
 ## [See tumbly live](https://tumbly-app.herokuapp.com)
 
-### This application utilizes a `Rails` backend, a Postgres database and a `React` frontend. Similarly to Tumblr, users can choose from a variety of post types to publish on their blog, like Text, Photo, Quote, etc. Your dashboard contains of feed of posts by tumbly users, and the opportunity to comment on a post (keep it friendly! :) )
+### This application utilizes a `Rails` backend, a Postgres database and a `React` frontend. Similarly to Tumblr, users can choose from a variety of post types to publish on their blog, like Text, Photo, Quote, etc. Your dashboard contains a feed of posts by tumbly users, and the opportunity to comment on a post (keep it friendly! :) )
 
 
 ![posting a quote](app/assets/images/quotePost.gif)
