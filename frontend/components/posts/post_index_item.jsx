@@ -39,7 +39,8 @@ class PostIndexItem extends React.Component {
 
     revealComments(){
         let commentsCont = document.getElementById(`post-comments-${this.props.post.id}`);
-        if (commentsCont.style.display === 'none') {
+        let styles = window.getComputedStyle(commentsCont);
+        if (styles.display === "none") {
             commentsCont.style.display = "flex";
         } else {
             commentsCont.style.display = "none";            
@@ -88,8 +89,10 @@ class PostIndexItem extends React.Component {
         let that = this;
         let postComments = this.props.post.comments.map(com => {
             let deleteComButton = "";
+            let comImage = com.authorPic ? com.authorPic : "https://assets.tumblr.com/images/default_avatar/cone_open_128.png"
+         
             if (parseInt(com.user_id) === that.props.currentUser){
-            
+                
                 deleteComButton = <button className="com-delete-btn" onClick={() => {
                     this.props.deleteComment(com.id).then((res) => this.props.fetchPost(this.props.post.id))
                     
@@ -97,8 +100,9 @@ class PostIndexItem extends React.Component {
             } 
             return <li className="comment-li" key={com.id}>
                 <div className="comment-left">
+                    <img className="comment-image" src={comImage} alt={`${com.author}`}/>
                     <h6>{com.body}</h6>
-                    <h6>{com.created_at.slice(0, 10)}</h6>
+                    {/* <h6>{com.created_at.slice(0, 10)}</h6> */}
                 </div>
                 <div className="comment-right">
                     {deleteComButton}
@@ -142,8 +146,8 @@ class PostIndexItem extends React.Component {
                                 <ul className="comments-ul">{postComments}</ul>
                                 <form className="comment-form" onSubmit={this.handleSubmit}>
                                     <div className="form-error">{this.state.msg}</div>
-                                    <input type="text" value={this.state.body} onChange={this.update('body')} />
-                                    <input type="submit" value="Post Comment"/>
+                                    <input className="comment-input" type="text" value={this.state.body} onChange={this.update('body')} placeholder="Say something about this"/>
+                                    <input className="comment-submit" type="submit" value="Post Comment"/>
                                 </form>
                             </div>
                         </div>
@@ -185,8 +189,8 @@ class PostIndexItem extends React.Component {
                                 <ul className="comments-ul">{postComments}</ul>
                                 <form className="comment-form" onSubmit={this.handleSubmit}>
                                     <div className="form-error">{this.state.msg}</div>
-                                    <input type="text" value={this.state.body} onChange={this.update('body')}/>
-                                    <input type="submit" value="Post Comment" />
+                                    <input className="comment-input" type="text" value={this.state.body} onChange={this.update('body')} placeholder="Say something about this"/>
+                                    <input className="comment-submit" type="submit" value="Post Comment" />
                                 </form>
                             </div>
                         </div>
