@@ -60,7 +60,10 @@ class ActionButtons extends React.Component {
         ) : (
                 <button onClick={this.handleLike} className="no-border-btn" > <i className="fa fa-heart"></i></button>
             )
-       
+        let numCommentsIcon = this.props.numComments;
+        let numLikesIcon = this.props.numLikes;
+        if (this.props.numComments === 0) numCommentsIcon = ""
+        if (this.props.numLikes === 0) numLikesIcon = ""
         
         return (
             <div className="user-action-buttons">
@@ -70,10 +73,10 @@ class ActionButtons extends React.Component {
                 <div className="user-action-right">
                     <button className="no-border-btn"><i className="fa fa-paper-plane"></i></button>
                     <button onClick={() => this.revealComments()} className="no-border-btn"><i className="fa fa-comment"></i></button>
-                    <h6 className="comment-count">{this.props.numComments}</h6>
+                    <h6 className="comment-count">{numCommentsIcon}</h6>
                     <button className="no-border-btn"><i className="fa fa-retweet"></i></button>
                     {heartIcon}
-                    <h6 className="like-count">{this.props.numLikes}</h6>
+                    <h6 className="like-count">{numLikesIcon}</h6>
                 </div>
             </div>
         )
