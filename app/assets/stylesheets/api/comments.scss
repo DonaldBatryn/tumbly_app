@@ -11,8 +11,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    overflow: hidden;
-    overflow-y: scroll;
+    // overflow: hidden;
+    // overflow-y: scroll;
 }
 
 .comments-ul{
@@ -31,24 +31,41 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    height: 40px;
+    align-items: flex-start;
+    height: auto;
+    // min-height: 40px;
     width: 95%;
     border-bottom: 1px solid lightgray;
+    margin-top: 1px;
 }
 
 .comment-left{
+    margin-top: 1px;
     width: 80%;
-    height: 40px;
+    min-height: 40px;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.comment-left h6{
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 10px 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto;
+    min-height: 20px;
+    max-width: 80%;
 }
 
 .comment-right{
     width: 10%;
-    height: 40px;
+    min-height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -82,7 +99,7 @@
 .comment-image{
     height: auto;
     width: 30px;
-    margin-right: 20px;
+    margin: 5px 20px 0 0;
 }
 
 input.comment-input{
