@@ -237,6 +237,50 @@ input.nav-search-bar:focus::placeholder{
     margin-right: 20px;
 }
 
+// .coming-soon-msg{
+//     position: absolute;
+//     top: 10vh;
+//     left: 30vw;
+    
+//     width: 460px;
+// }
+
+// .coming-soon-txt{
+//     text-align: center;
+//     font-size: 130px;
+//     color: rgb(218, 34, 218);
+//     font-weight: 800;
+//     z-index: 20;
+// }
+
+.coming-soon-msg{
+    position: absolute;
+    top: 56px;
+    left: 0;
+    background-color: rgba(34, 34, 34, 0.651);
+    width: 100vw;
+    height: calc(100vh - 56px);
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 10;
+}
+
+.text-box-comingsoon{
+    width: 460px;
+    height: auto;
+    margin-top: 100px;
+}
+
+.coming-soon-txt{
+    text-align: center;
+    font-size: 130px;
+    color: whitesmoke;
+    font-weight: 800;
+    z-index: 20;
+}
+
 
 @media all and (max-width: 800px){
     .navbar-center{
