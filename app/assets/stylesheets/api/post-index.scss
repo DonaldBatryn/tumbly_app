@@ -188,6 +188,14 @@
     color: rgb(17, 17, 65);
 }
 
+.liked-heart{
+    color: red;
+}
+
+.liked-heart:hover{
+    color: rgba(255, 0, 0, 0.692);
+}
+
 .delete{
     position: relative;
     top: -3px;

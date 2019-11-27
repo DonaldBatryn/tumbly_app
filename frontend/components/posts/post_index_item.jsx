@@ -6,11 +6,15 @@ class PostIndexItem extends React.Component {
         this.state = {
             user: null,
             body: "",
-            msg: ""
+            msg: "",
+            likedByCurrentUser: false,
+            numLikes: this.props.post.likes.length,
+            numComments: this.props.post.comments.length
         }
         this.handleDelete = this.handleDelete.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.revealComments = this.revealComments.bind(this);
+        this.handleLike = this.handleLike.bind(this);
     }
 
     handleDelete(postId) {
@@ -34,6 +38,11 @@ class PostIndexItem extends React.Component {
     componentDidMount() {
         this.props.fetchUser(this.props.post.user_id).then(user => {
             this.setState({ user: user.user })
+        })
+        this.props.post.likes.forEach(like => {
+            if (like.userId === this.props.currentUser) {
+                this.setState({ likedByCurrentUser: true })
+            }
         })
     }
 
@@ -62,6 +71,28 @@ class PostIndexItem extends React.Component {
             this.setState({ body: ""})
             this.props.fetchPost(postId)
         })
+    }
+
+    handleLike(){
+        let deletedLike = false;
+        let that = this;
+        this.props.post.likes.forEach(like => {
+            if (like.userId === that.props.currentUser) {
+                that.props.deleteLike(like.likeId).then(res => {
+                    that.setState({ likedByCurrentUser: false })
+                    this.props.fetchPost(this.props.post.id)
+                })
+                deletedLike = true
+            }
+        })
+        if (!deletedLike) {
+            let like = { post_id: this.props.post.id }
+            this.props.createLike(this.props.post.id, like).then(res => {
+                this.setState({ likedByCurrentUser: true })
+                this.props.fetchPost(this.props.post.id)
+            })
+        }
+        
     }
 
     render() {
@@ -109,7 +140,15 @@ class PostIndexItem extends React.Component {
                 </div>
                 </li>
         })
-        
+
+        let heartIcon = this.state.likedByCurrentUser ? (
+            <button onClick={this.handleLike} className="no-border-btn liked-heart"><i className="fa fa-heart"></i></button>
+        ) : (
+            <button onClick = {this.handleLike} className = "no-border-btn" > <i className="fa fa-heart"></i></button>
+        )
+
+        let likeCount = this.state.numLikes > 0 ? this.state.numLikes : "";
+        let commentCount = this.state.numComments > 0 ? this.state.numComments : "";
        
         if (this.props.post.post_type === 'quote') {
             return (
@@ -138,8 +177,10 @@ class PostIndexItem extends React.Component {
                                 <div className="user-action-right">
                                     <button className="no-border-btn"><i className="fa fa-paper-plane"></i></button>
                                     <button onClick={() => this.revealComments()} className="no-border-btn"><i className="fa fa-comment"></i></button>
+                                    <h6 className="comment-count">{commentCount}</h6>
                                     <button className="no-border-btn"><i className="fa fa-retweet"></i></button>
-                                    <button className="no-border-btn"><i className="fa fa-heart"></i></button>
+                                    {heartIcon}
+                                    <h6 className="like-count">{likeCount}</h6>
                                 </div>
                             </div>
                             <div id={`post-comments-${this.props.post.id}`} className="comments-container">
@@ -181,8 +222,10 @@ class PostIndexItem extends React.Component {
                                 <div className="user-action-right">
                                     <button className="no-border-btn"><i className="fa fa-paper-plane"></i></button>
                                     <button onClick={() => this.revealComments()} className="no-border-btn"><i className="fa fa-comment"></i></button>
+                                    <h6 className="comment-count">{commentCount}</h6>
                                     <button className="no-border-btn"><i className="fa fa-retweet"></i></button>
-                                    <button className="no-border-btn"><i className="fa fa-heart"></i></button>
+                                    {heartIcon}
+                                    <h6 className="like-count">{likeCount}</h6>
                                 </div>
                             </div>
                             <div id={`post-comments-${this.props.post.id}`} className="comments-container hidden">

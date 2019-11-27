@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchPosts, deletePost, fetchPost } from '../../actions/post_actions';
 import { createComment, deleteComment } from '../../actions/comment_actions';
+import { createLike, deleteLike } from '../../actions/like_actions';
 import { fetchUser } from '../../actions/user_actions';
 import PostIndex from './post_index';
 
@@ -22,8 +23,9 @@ const mdp = dispatch => {
         fetchUser:(id) => dispatch(fetchUser(id)),
         deletePost: (id) => dispatch(deletePost(id)),
         createComment: (postId, comment) => dispatch(createComment(postId, comment)),
-        deleteComment: id => dispatch(deleteComment(id))
-        
+        deleteComment: id => dispatch(deleteComment(id)),
+        createLike: (postId, like) => dispatch(createLike(postId, like)),
+        deleteLike: id => dispatch(deleteLike(id))
     })
 }
 

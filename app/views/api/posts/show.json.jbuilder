@@ -11,3 +11,10 @@ json.comments @post.comments.each do |comment|
     json.id comment.id
     json.created_at comment.created_at
 end
+
+json.likes @post.likes.each do |like|
+    json.likerImage url_for(like.user.image) if like.user.image.attached?
+    json.user like.user.username
+    json.userId like.user.id
+    json.likeId like.id
+end
