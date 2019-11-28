@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { fetchPosts, deletePost, fetchPost } from '../../actions/post_actions';
 import { createComment, deleteComment } from '../../actions/comment_actions';
 import { createLike, deleteLike } from '../../actions/like_actions';
+import { createFollow, deleteFollow } from '../../actions/follow_actions';
 import { fetchUser } from '../../actions/user_actions';
 import PostIndex from './post_index';
 
@@ -25,7 +26,9 @@ const mdp = dispatch => {
         createComment: (postId, comment) => dispatch(createComment(postId, comment)),
         deleteComment: id => dispatch(deleteComment(id)),
         createLike: (postId, like) => dispatch(createLike(postId, like)),
-        deleteLike: id => dispatch(deleteLike(id))
+        deleteLike: id => dispatch(deleteLike(id)),
+        createFollow: (userId, follow) => dispatch(createFollow(userId, follow)),
+        deleteFollow: (userId) => dispatch(deleteFollow(userId))
     })
 }
 

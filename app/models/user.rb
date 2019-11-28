@@ -22,6 +22,28 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Like
 
+    has_many :received_follows,
+    primary_key: :id,
+    foreign_key: :followee_id,
+    class_name: :Follow
+
+    # the user in question is the followed_user.
+    has_many :followers,
+    through: :received_follows,
+    source: :follower
+
+    # follows where the user is the follower.
+    has_many :given_follows,
+    primary_key: :id,
+    foreign_key: :follower_id,
+    class_name: :Follow
+
+    # all of the users a user follows
+    has_many :followings,
+    through: :given_follows,
+    source: :followee
+
+
     has_one_attached :image
 
     def self.find_by_credentials(email, password)
