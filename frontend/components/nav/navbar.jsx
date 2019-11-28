@@ -17,7 +17,7 @@ class NavBar extends React.Component {
         }
         this.logoutUser = this.logoutUser.bind(this);
         this.getLinks = this.getLinks.bind(this);
-        this.handleMsg - this.handleMsg.bind(this);
+        this.handleMsg = this.handleMsg.bind(this);
     }
 
     handleMsg(){
@@ -36,15 +36,12 @@ class NavBar extends React.Component {
         this.props.logout();
     }
 
-    // Selectively render links dependent on whether the user is logged in
     getLinks() {
         if (this.props.loggedIn) {
             return (
                 <div className="navbar-main-loggedIn">
                     <div className="navbar-left">
-                        {/* <Link className="t-logo-link" to="/dashboard"><strong>t</strong></Link> */}
                         <Link className="t-logo-link" to="/dashboard"><i className="fa fa-tumblr"></i></Link>
-                       
                         <Search />
                     </div>
                     <div className="navbar-center">
@@ -54,13 +51,9 @@ class NavBar extends React.Component {
                         <button className="nav-icon" onClick={() => this.handleMsg()}><i className="myicon fa fa-comment"></i></button>
                         <button className="nav-icon" onClick={() => this.handleMsg()}><i className="myicon fa fa-bolt"></i></button>
                         <button className="nav-icon" onClick={() => this.props.openModal('Profile')}><i className="myicon fa fa-user"></i></button>
-                        {/* <ComingSoon className="coming-soon-msg" pose={this.state.comingSoonisVisible ? 'visible' : 'hidden'}>
-                            <h1 className="coming-soon-txt">Feature coming soon!</h1>
-                        </ComingSoon> */}
                         <ComingSoon className="coming-soon-msg" pose={this.state.comingSoonisVisible ? 'visible' : 'hidden'}>
                             <div className="text-box-comingsoon">
-                            <h1 className="coming-soon-txt">Feature coming soon!</h1>
-
+                                <h1 className="coming-soon-txt">Feature coming soon!</h1>
                             </div>
                         </ComingSoon>
                     </div>

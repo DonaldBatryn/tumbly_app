@@ -1,6 +1,7 @@
 import React from 'react';
 import ActionButtons from './user_action_buttons';
 
+
 class PostIndexItem extends React.Component {
     constructor(props) {
         super(props);
@@ -59,7 +60,8 @@ class PostIndexItem extends React.Component {
         let userImage = this.state.user.imageUrl ? this.state.user.imageUrl : "https://assets.tumblr.com/images/default_avatar/cone_open_128.png"
 
         let that = this;
-        let postComments = this.props.post.comments.map(com => {
+        let postComs = this.props.post.comments.sort((a, b) => (a.created_at < b.created_at) ? -1 : 1)
+        let postComments = postComs.map(com => {
             let deleteComButton = "";
             let comImage = com.authorPic ? com.authorPic : "https://assets.tumblr.com/images/default_avatar/cone_open_128.png"
          

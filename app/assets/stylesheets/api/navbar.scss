@@ -2,7 +2,6 @@
 .navbar-container{
     width: 100vw;
     height: 56px;
-    /* background-color: rgb(17, 17, 65); */
     border-bottom: 1px solid rgba(156, 217, 238, 0.3);
     position: fixed;
     top: 0;
@@ -32,7 +31,6 @@
     width: 45%;
     min-width: 400px;
     height: 98%;
-    /* background-color: lightblue; */
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -44,19 +42,16 @@
     width: 45%;
     min-width: 400px;
     height: 98%;
-    /* background-color: lightblue; */
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    // margin-right: 20px;
 }
 
 .navbar-right{
     width: 10%;
     min-width: 100px;
     height: 98%;
-    /* background-color: lightblue; */
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -82,8 +77,6 @@
 .nav-icon:hover{
     color: rgba(223, 219, 219, 0.7); 
 }
-
-
 
 a.t-logo-link{
     width: 50px;
@@ -112,7 +105,6 @@ a.t-logo-link{
 }
 
 .nav-search-bar{
-    // position: relative;
     width: 80%;
     height: 38px;
     padding-left: 15px;
@@ -237,24 +229,9 @@ input.nav-search-bar:focus::placeholder{
     margin-right: 20px;
 }
 
-// .coming-soon-msg{
-//     position: absolute;
-//     top: 10vh;
-//     left: 30vw;
-    
-//     width: 460px;
-// }
-
-// .coming-soon-txt{
-//     text-align: center;
-//     font-size: 130px;
-//     color: rgb(218, 34, 218);
-//     font-weight: 800;
-//     z-index: 20;
-// }
 
 .coming-soon-msg{
-    position: absolute;
+    position: fixed;
     top: 56px;
     left: 0;
     background-color: rgba(34, 34, 34, 0.651);
