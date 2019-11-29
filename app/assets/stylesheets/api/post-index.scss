@@ -87,8 +87,8 @@
 
 .post-follow-btn{
     padding: 3px 8px 3px 8px;
-    width: 55px;
-    height: 20px;
+    width: 75px;
+    height: 24px;
     background-color: rgb(58, 192, 236);
     border-radius: 3px;
     font-weight: 600;
@@ -209,7 +209,6 @@
 }
 
 .delete-msg{
-    // visibility: hidden;
     opacity: 0;
     font-size: 15px;
     transition: visibility 0.2s ease-in;
@@ -217,14 +216,10 @@
     color: red;
 }
 
-.delete:hover + .delete-msg{
-    // visibility: visible;
-    // opacity: 0.5;
-}
+
 
 .delete:hover{
     color: red;
-
 }
 
 .page-fold{

@@ -1,6 +1,6 @@
 import React from 'react';
 import ActionButtons from './user_action_buttons';
-
+import FollowButton from './follow_button';
 
 class PostIndexItem extends React.Component {
     constructor(props) {
@@ -8,11 +8,9 @@ class PostIndexItem extends React.Component {
         this.state = {
             user: null,
             body: "",
-            msg: "",
-            isFollowingUser: false
+            msg: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleFollow = this.handleFollow.bind(this);
     }
 
     update(field) {
@@ -24,31 +22,7 @@ class PostIndexItem extends React.Component {
     componentDidMount() {
         this.props.fetchUser(this.props.post.user_id).then(user => {
             this.setState({ user: user.user })
-        }).then(res => {
-            
-            this.state.user.followed_users.forEach(user => {
-                if (user.id === this.props.post.user.id) {
-                    this.setState({ isFollowingUser: true })
-                }
-            })
-
         })
-    }
-
-    handleFollow() {
-        if (this.state.isFollowingUser) {
-            this.props.deleteFollow(this.props.post.user_id).then(res => {
-                this.setState({ isFollowingUser: false })
-                this.props.fetchPost(this.props.post.id)
-            })
-        } else {
-            let follow = { follower_id: this.props.currentUser, followee_id: this.props.post.user_id }
-            this.props.createFollow(this.props.post.user_id, follow).then(res => {
-                this.setState({ isFollowingUser: true })
-                this.props.fetchPost(this.props.post.id)
-            })
-        }
-
     }
 
     handleSubmit(e) {
@@ -79,10 +53,8 @@ class PostIndexItem extends React.Component {
             imageUl = <ul className="image-ul">{images}</ul>
         }
 
-        let followBtn = this.props.post.user_id === this.props.currentUser ? "" : this.state.isFollowingUser ? (<button onClick={this.handleFollow} className="post-follow-btn">Unfollow</button>) : (
-            <button onClick={this.handleFollow} className="post-follow-btn">Follow</button>
-        )
-
+        let followBtn = this.props.post.user_id === this.props.currentUser ? "" : <FollowButton post={this.props.post} />
+        
         let userImage = this.state.user.imageUrl ? this.state.user.imageUrl : "https://assets.tumblr.com/images/default_avatar/cone_open_128.png"
 
         let that = this;
@@ -137,7 +109,6 @@ class PostIndexItem extends React.Component {
                         <div className="user-post-info">
                             <h4>A post by:&nbsp;&nbsp;{this.state.user.username}</h4>
                             {followBtn}
-
                         </div>
 
                         {imageUl}
