@@ -27,13 +27,11 @@ class ActionButtons extends React.Component {
     }
 
     handleMsg() {
-        console.log('begin')
         let comingSoon = document.getElementById(this.props.post.id)
         let styles = window.getComputedStyle(comingSoon);
         if (styles.display === 'none') comingSoon.style.display = 'flex';
         this.setState({ comingSoonisVisible: true })
         setTimeout(() => {
-            console.log('timeout')
             this.setState({ comingSoonisVisible: false })
             comingSoon.style.display = 'none';
         }, 2200)
