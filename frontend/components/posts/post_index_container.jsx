@@ -9,7 +9,7 @@ import PostIndex from './post_index';
 
 const msp = state => {
     let user = state.entities.users[state.session.id];
-    
+    // debugger
     return ({
         posts: Object.keys(state.entities.posts).map(id => {
             return state.entities.posts[id]
