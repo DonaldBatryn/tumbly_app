@@ -138,9 +138,9 @@ GEM
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (0.3.3)
-      mimemagic (~> 0.3.2)
+      gem 'mimemagic', '0.3.0', github: 'mimemagicrb/mimemagic', ref: 'a4b038c6c1b9d76dac33d5711d28aaa9b4c42c66'
     method_source (0.9.2)
-    mimemagic (0.3.3)
+    gem 'mimemagic', '0.3.0', github: 'mimemagicrb/mimemagic', ref: 'a4b038c6c1b9d76dac33d5711d28aaa9b4c42c66'
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.13.0)
